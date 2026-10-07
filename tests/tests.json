@@ -1,0 +1,59 @@
+[
+  {
+    "name": "Filter the feed for 18+ events",
+    "sanity": true,
+    "viewport": "mobile",
+    "covers": [
+      "quick filters",
+      "18+ eligibility filtering",
+      "mobile event discovery"
+    ],
+    "description": "Verifies the core discovery feed can quickly narrow to events explicitly available to an 18-year-old.",
+    "steps": [
+      "Open the app on mobile",
+      "Tap the 18+ quick filter",
+      "Review the visible event rows"
+    ],
+    "expected": "18+ events such as 🌎utta 🌎rder or Soirée are visible, while events marked 21+ are not shown in the results."
+  },
+  {
+    "name": "Search and open an event detail",
+    "viewport": "desktop",
+    "covers": ["search", "event detail route", "ticket source CTA"],
+    "description": "Verifies a user can find a specific event and inspect its decision-critical details before leaving for ticketing.",
+    "steps": [
+      "Open search",
+      "Search for No Borders",
+      "Open the No Borders event result"
+    ],
+    "expected": "The detail view shows No Borders, the Strand venue, its $15.49+ access line, and a visible ticket CTA."
+  },
+  {
+    "name": "Show conditional-free events with the Free filter",
+    "viewport": "mobile",
+    "covers": [
+      "free quick filter",
+      "conditional free access labels",
+      "price filtering"
+    ],
+    "description": "Verifies events with a real free RSVP or free-before condition are discoverable without relabeling paid-only events as free.",
+    "steps": [
+      "Tap the Free quick filter",
+      "Review the filtered list",
+      "Open an event with a free-before condition"
+    ],
+    "expected": "Conditional-free events remain visible with their cutoff language, while paid-only events such as Black Hause are not in the filtered results."
+  },
+  {
+    "name": "Recover from an empty filter result",
+    "viewport": "desktop",
+    "covers": ["empty state", "clear filters guardrail", "filter recovery"],
+    "description": "Verifies a restrictive filter combination does not strand the user in an unexplained empty state.",
+    "steps": [
+      "Open Filters",
+      "Choose a combination that produces no matching events",
+      "Use Clear filters from the empty state"
+    ],
+    "expected": "A clear no-results message is shown, and Clear filters restores the event feed."
+  }
+]
